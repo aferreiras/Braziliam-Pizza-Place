@@ -1,25 +1,33 @@
-import logo from './logo.svg';
+// arquivo App.js, criado pelo create-react-app, modificado
+import React,{Component} from 'react';
 import './App.css';
+import SelectBar from "./selectBar"
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {  
+  constructor(){
+    super()
+    this.state = {
+      value: ""
+    }
+    this.valueHandler = this.valueHandler.bind(this)
+  }
+  
+  valueHandler({target}){
+    this.setState({
+      value:target.value
+    })
+    
+  }
+  render() {
+  
+    return (
+      <div  >
+        <SelectBar changed={this.valueHandler} />
+        {/* <RecipeQuantity />
+        <RecipeInstructions /> */}
+      </div>
+    );
+  }
 }
 
 export default App;
