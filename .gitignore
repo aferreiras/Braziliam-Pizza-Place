@@ -18,8 +18,9 @@
 .env.test.local
 .env.production.local
 
-.eslintrc.json
 .vscode/launch.json
+.eslintrc.json
+
 
 package-lock.json
 
