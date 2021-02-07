@@ -15,7 +15,7 @@ class PizzaHomePage extends Component {
       current: '',
       loading: true,
       currentRecipeData: {},
-      sizeConversion: 35,
+      newSize: 35,
       flourConversion: 250,
       waterConversion: 175,
       quantity: 1,
@@ -54,7 +54,7 @@ class PizzaHomePage extends Component {
 
   returnRecipe() {
     const {
-      currentRecipeData, sizeConversion, newSize, quantity,
+      currentRecipeData, newHidratation, newSize, quantity,
     } = this.state;
     return (
       <h1>
@@ -63,12 +63,13 @@ class PizzaHomePage extends Component {
         <form>
           <label htmlFor="plusQuantity minusQuantity">
             Quantity
+            { quantity }
             <button type="button" id="plusQuantity" onClick={this.quantityClick}>+</button>
             <button type="button" id="minusQuantity" onClick={this.quantityClick}>-</button>
           </label>
           <label htmlFor="plusSize minusSize">
             Hidratation
-            { newSize }
+            { newHidratation }
             <button type="button" id="plusHidratation" onClick={this.hidratationClick}> + </button>
             <button type="button" id="minusHidratation" onClick={this.hidratationClick}> - </button>
 
